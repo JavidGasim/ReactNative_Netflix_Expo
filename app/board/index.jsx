@@ -62,13 +62,6 @@ const Board = () => {
     >
       <View className="flex-row">
         <Vector width={130} height={40} style={{ marginTop: 40 }} />
-        <TouchableOpacity onPress={() => {
-          router.push("board/privacy");
-        }}>
-          <Text className="left-[65px] top-[51px] font-normal font-robotoRegular text-[14px] leading-[17px] color-[#FFFFFF]">
-          Privacy
-          </Text>
-        </TouchableOpacity>
         <Text className="left-[75px] top-[51px] font-normal font-robotoRegular text-[14px] leading-[17px] color-[#FFFFFF]">
           Help
         </Text>

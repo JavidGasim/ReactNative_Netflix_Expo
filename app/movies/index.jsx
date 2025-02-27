@@ -14,7 +14,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import TrendingTVShows from "../../components/tvShows/TrendingTVShows";
 import TrendingMovies from "../../components/movies/TrendingMovies";
 import { router } from "expo-router";
-import Constants from 'expo-constants';
+import Constants from "expo-constants";
 
 const IP_URL = Constants.expoConfig.extra.IP_URL;
 const Base_Image_URL = Constants.expoConfig.extra.Base_Image_URL;
@@ -28,9 +28,7 @@ const Movies = () => {
 
   const getTrendingMovies = async () => {
     try {
-      const response = await fetch(
-        `${IP_URL}/movie/trending`
-      );
+      const response = await fetch(`${IP_URL}/movie/trending`);
 
       if (response.ok) {
         const datas = await response.json();
@@ -44,9 +42,7 @@ const Movies = () => {
 
   const getTrendingTVShows = async () => {
     try {
-      const response = await fetch(
-        `${IP_URL}/tv/trending`
-      );
+      const response = await fetch(`${IP_URL}/tv/trending`);
 
       if (response.ok) {
         const datas = await response.json();
@@ -58,8 +54,8 @@ const Movies = () => {
   };
 
   useEffect(() => {
-    // AsyncStorage.removeItem('token');
-    // AsyncStorage.removeItem('first');
+    // AsyncStorage.removeItem("token");
+    // AsyncStorage.removeItem("first");
     getTrendingMovies();
     getTrendingTVShows();
   }, []);
@@ -69,7 +65,7 @@ const Movies = () => {
       <Vector width={90} height={25} />
       <ImageBackground
         source={{ uri: `${Base_Image_URL}${path}` }}
-        style={{ width: width}}
+        style={{ width: width }}
         className={`mt-[30px] h-[470px] rounded-[10px]`}
       >
         <TouchableOpacity
@@ -101,14 +97,6 @@ const Movies = () => {
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => {
-            router.push({
-              pathname: "/movies/moreinfo",
-              params: {
-                id: trendingMovies[0].id,
-                mediaType: trendingMovies[0].media_type,
-            }})
-          }}
           style={{
             position: "absolute",
             width: (width - 30) / 2,
@@ -149,7 +137,7 @@ const Movies = () => {
         data={trendingTVShows}
         horizontal
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{ marginTop: 20,marginBottom:40}}
+        contentContainerStyle={{ marginTop: 20, marginBottom: 40 }}
         renderItem={({ item, index }) => (
           <TrendingTVShows item={item} index={index} />
         )}
