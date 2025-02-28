@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Platform, ActivityIndicator, View, Animated } from "react-native";
+import { ActivityIndicator, View, Animated } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { Tabs, router, Redirect } from "expo-router";
-import { HapticTab } from "@/components/HapticTab";
+import { Redirect } from "expo-router";
 import { IconSymbol } from "@/components/ui/IconSymbol";
-import TabBarBackground from "@/components/ui/TabBarBackground";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { TouchableWithoutFeedback } from "react-native";
 
 import "../../global.css";
 

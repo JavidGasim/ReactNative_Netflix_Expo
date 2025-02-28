@@ -1,4 +1,11 @@
-import { Text, View, Dimensions, FlatList, ScrollView,TouchableOpacity } from "react-native";
+import {
+  Text,
+  View,
+  Dimensions,
+  FlatList,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import { useState, useEffect, useCallback } from "react";
 import { useLocalSearchParams } from "expo-router";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -137,19 +144,7 @@ const SimilarDetails = () => {
         )}
       />
 
-      <TouchableOpacity
-        onPress={() => {
-          router.push({
-            pathname:
-              mediaType == "movie" ? "movies/moreinfo" : "movies/moreinfoTv",
-            params: {
-              id: id,
-              mediaType: mediaType,
-            },
-          });
-        }}
-        className="bg-[#444444] p-[12px] mt-[20px] mx-[20px] rounded-[8px] items-center"
-      >
+      <TouchableOpacity className="bg-[#444444] p-[12px] mt-[20px] mx-[20px] rounded-[8px] items-center">
         <Text className="color-[#FFFFFF] text-[16px] font-montserratSemiBold">
           More Info
         </Text>
