@@ -115,7 +115,7 @@ const SimilarDetails = () => {
               index !== 0 && "ml-[20px]"
             }`}
           >
-            <Text className="color-[#FFFFFF] font-inter18ptRegular font-normal text-[12px] leading-[24px]">
+            <Text className="color-[#FFFFFF] font-inter18ptRegular font-normal text-[12px] leading-[13px]">
               {item.name}
             </Text>
           </View>
